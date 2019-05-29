@@ -1,6 +1,16 @@
 # OMS
 
-## What is order?
+## TOC
+
+- [What is order](#what-is-order)
+   - [Functionalities](#functionalities)
+   - [Characteriscs](#characteriscs)
+      - [variety](#variety多样性)
+      - [正向、逆向和搬仓混在一起，有race condition](#正向逆向和搬仓混在一起有race-condition)
+      - [依赖多](#依赖多)
+- [Core building blocks](#core-building-blocks)
+
+## What is order
 
 订单作为电商系统的纽带，贯穿了电商系统的关键流程，其他模块都是围绕订单构建的。 
 
