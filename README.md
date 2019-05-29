@@ -10,7 +10,7 @@
 - Information Collector and Passthru
    - Products
       - 商品信息主要影响库存、金额和WMS生产
-   - Stackholders
+   - Stakeholders
    - Addresses
    - Promotions
       - 涉及风控、黑白名单等
