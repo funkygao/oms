@@ -9,11 +9,17 @@
                   |-- OMS --|
            API ---+    |    +-- WMS
                        |
-    +--------------------------------------------+
-    |		 |       |          |            |
-dependencies    FSM   storage   modeling       facts
-                         |                       |
-                   lookup & search           BI & data mining
+    +-------------------------------+
+    |		 |       |          |
+dependencies    FSM   storage   XXXXXXXX       
+                         |                      
+                    +----+--------+            
+                    |             |           
+              lookup & search  modeling    
+	                          |
+				facts
+				  |
+	                   BI & data mining
 
 ```
 
@@ -61,6 +67,7 @@ dependencies    FSM   storage   modeling       facts
       - 台账
       - 风控
       - VMI
+      - GIS
       - 优惠券
       - 账户中心
    - 弱依赖
