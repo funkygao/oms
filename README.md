@@ -7,8 +7,11 @@
    - [Characteriscs](#characteriscs)
       - [variety](#variety多样性)
       - [正向、逆向和搬仓混在一起，有race condition](#正向逆向和搬仓混在一起有race-condition)
+      - [模型复杂](#模型复杂)
       - [依赖多](#依赖多)
+- [OFC](#ofc)
 - [Core building blocks](#core-building-blocks)
+- [Design](#design)
 
 ## What is order
 
@@ -112,15 +115,25 @@ dependencies    FSM   storage      打标
 - 换货报缺
 - 仲裁取消
 
+#### 模型复杂
+
+- 父子单(拆单)
+- 主赠关系
+- 团单与子单
+
 #### 依赖多
 
 - 内部依赖
    - 强依赖
       - 商品
       - 主数据
+      - 客户中心
       - 库存
       - 产品中心
       - 时效
+         - 控制下发WMS的时机
+	 - 控制下发TMS的时机
+      - 预分拣
       - 台账
       - 风控
       - VMI
@@ -132,6 +145,9 @@ dependencies    FSM   storage      打标
       - 大件预约
       - 发票系统
       - 计费系统
+      - 售后系统
+      - 订单异常中心
+      - 保价系统
       - TMS
       - WMS
          - 仓间调拨
@@ -139,6 +155,12 @@ dependencies    FSM   storage      打标
    - 第三方承运商
    - 第三方WMS
    - 第三方支付
+
+## OFC
+
+```
+用户提交订单 --- OFC --- 仓储生产
+```
 
 ## Core building blocks
 
@@ -157,3 +179,13 @@ dependencies    FSM   storage      打标
    - 按订单号查询
       - 动静分离
    - 搜索引擎
+
+## Design
+
+### 订单形态
+
+- 合约单(用户下达的指令)
+- 计划单(生产计划单)
+   - 订单拆分
+   - 订单转移
+- 生产单(生产运营单)
