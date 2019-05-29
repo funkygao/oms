@@ -11,7 +11,7 @@
                        |
     +-------------------------------+
     |		 |       |          |
-dependencies    FSM   storage   XXXXXXXX       
+dependencies    FSM   storage      打标
                          |                      
                     +----+--------+            
                     |             |           
@@ -20,13 +20,12 @@ dependencies    FSM   storage   XXXXXXXX
 				facts
 				  |
 	                   BI & data mining
-
 ```
 
 ### Functionalities
 
 - FSM
-- Information Collector and Passthru
+- Information Collector and Passthru(model)
    - Products
       - 商品信息主要影响库存、金额和WMS生产
    - Stakeholders
@@ -36,25 +35,51 @@ dependencies    FSM   storage   XXXXXXXX
       - 可能涉及到人工审核
    - Payment
       - 记录交易金额，也要记录过程金额
-      - 例如，商品分摊的优惠金额、支付金额、应付等
+      - 例如，商品分摊的优惠金额、积分、支付金额、应付等
+         - 积分互换
       - 退换货、风控、财务等会用到
    - Time
       - 全生命周期的状态节点触发时间
       - 与状态一起表示它发生的时间语义
 - Interact with stock
-- Execution(translation)
+   - 避免超卖和少卖
+   - 超卖对用户体验差
+   - 少卖对商家体验差
+- Execution(translation or orchestrator)
    - transport to WMS
    - transport to TMS
 
-### 特征
+### Characteriscs
 
-#### 多样性
+#### Variety(多样性)
 
 例如
 - 地址信息，O2O订单，会多出自提点地址
 - 支付信息，如果COD
+- 缺货处理
+   - 部分缺货
+- 预售订单，拼单，合单，拆单
+- 来源
+   - 导入
+   - API
+   - 页面手工建单
+   - 内部测试UAT
+   - 自动生成订单
+   - 无界(新)零售
+      - 意味着到处都可能是入口
 
-### 正向和逆向混在一起，有race condition
+### 正向、逆向和搬仓混在一起，有race condition
+
+取消可能包括如下场景，同时包括整单取消和部分取消：
+- 买家取消
+- 卖家取消
+- WMS取消
+- TMS取消
+- 风控取消
+- 客服取消
+- 超时未支付取消
+- 换货报缺
+- 仲裁取消
 
 ### 依赖多
 
@@ -74,6 +99,7 @@ dependencies    FSM   storage   XXXXXXXX
       - 清关
       - TMS
       - WMS
+         - 仓间调拨
 - 外部依赖
    - 第三方承运商
    - 第三方WMS
