@@ -48,6 +48,18 @@ dependencies    FSM   storage      打标
 - Execution(translation or orchestrator)
    - transport to WMS
    - transport to TMS
+- Push
+   - to whom
+      - 商家
+      - 用户
+      - 仓储人员
+      - 配送人员
+   - how 
+      - 手机push
+      - 站内信
+      - callback API
+      - SMS
+      - wechat
 
 ### Characteriscs
 
@@ -58,7 +70,7 @@ dependencies    FSM   storage      打标
 - 支付信息，如果COD
 - 缺货处理
    - 部分缺货
-- 预售订单，拼单，合单，拆单
+- 预售，团购，拼单，拆单，合单
 - 来源
    - 导入
    - API
@@ -68,7 +80,7 @@ dependencies    FSM   storage      打标
    - 无界(新)零售
       - 意味着到处都可能是入口
 
-### 正向、逆向和搬仓混在一起，有race condition
+#### 正向、逆向和搬仓混在一起，有race condition
 
 取消可能包括如下场景，同时包括整单取消和部分取消：
 - 买家取消
@@ -81,7 +93,7 @@ dependencies    FSM   storage      打标
 - 换货报缺
 - 仲裁取消
 
-### 依赖多
+#### 依赖多
 
 - 内部依赖
    - 强依赖
@@ -105,16 +117,18 @@ dependencies    FSM   storage      打标
    - 第三方WMS
    - 第三方支付
 
-## Dependencies
-
 ## Core building blocks
 
 - 各种语义的分布式锁
+   - 幂等性
 - 定时任务平台
 - 可靠的MQ发送机制
 - FSM
 - 统一异常中心
 - 流程引擎
 - 异步接单框架
-- 搜索引擎
-
+- 查询
+   - 读写分离
+   - 按订单号查询
+      - 动静分离
+   - 搜索引擎
