@@ -14,6 +14,8 @@
 
 订单作为电商系统的纽带，贯穿了电商系统的关键流程，其他模块都是围绕订单构建的。 
 
+订单可以认为是一次交易的生命周期，订单是交易的载体，反应的是履约的内容。
+
 ```
            User --+         +-- TMS
                   |-- OMS --|
@@ -58,6 +60,13 @@ dependencies    FSM   storage      打标
 - Execution(translation or orchestrator)
    - transport to WMS
    - transport to TMS
+   - 履约内容
+      - 时效
+      - 发票
+      - 优惠
+      - COD收款
+      - 预约
+      - 运费
 - Push
    - to whom
       - 商家
@@ -111,6 +120,7 @@ dependencies    FSM   storage      打标
       - 主数据
       - 库存
       - 产品中心
+      - 时效
       - 台账
       - 风控
       - VMI
@@ -119,6 +129,9 @@ dependencies    FSM   storage      打标
       - 账户中心
    - 弱依赖
       - 清关
+      - 大件预约
+      - 发票系统
+      - 计费系统
       - TMS
       - WMS
          - 仓间调拨
