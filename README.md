@@ -4,6 +4,19 @@
 
 订单作为电商系统的纽带，贯穿了电商系统的关键流程，其他模块都是围绕订单构建的。 
 
+```
+           User --+         +-- TMS
+                  |-- OMS --|
+           API ---+    |    +-- WMS
+                       |
+    +--------------------------------------------+
+    |		 |       |          |            |
+dependencies    FSM   storage   modeling       facts
+                         |                       |
+                   lookup & search           BI & data mining
+
+```
+
 ### Functionalities
 
 - FSM
@@ -21,6 +34,7 @@
       - 退换货、风控、财务等会用到
    - Time
       - 全生命周期的状态节点触发时间
+      - 与状态一起表示它发生的时间语义
 - Interact with stock
 - Execution(translation)
    - transport to WMS
@@ -61,3 +75,13 @@
 ## Dependencies
 
 ## Core building blocks
+
+- 各种语义的分布式锁
+- 定时任务平台
+- 可靠的MQ发送机制
+- FSM
+- 统一异常中心
+- 流程引擎
+- 异步接单框架
+- 搜索引擎
+
