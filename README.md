@@ -6,7 +6,7 @@
    - [Functionalities](#functionalities)
    - [Characteriscs](#characteriscs)
       - [variety](#variety多样性)
-      - [正向、逆向和搬仓混在一起，有race condition](#正向逆向和搬仓混在一起有race-condition)
+      - [正向、逆向、盘点和搬仓混在一起，有race condition](#正向逆向盘点和搬仓混在一起有race-condition)
       - [模型复杂](#模型复杂)
       - [依赖多](#依赖多)
 - [Core building blocks](#core-building-blocks)
@@ -101,7 +101,7 @@ dependencies    FSM   storage      打标
    - 无界(新)零售
       - 意味着到处都可能是入口
 
-#### 正向、逆向和搬仓混在一起，有race condition
+#### 正向、逆向、盘点和搬仓混在一起，有race condition
 
 取消可能包括如下场景，同时包括整单取消和部分取消：
 - 买家取消
