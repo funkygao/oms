@@ -2,7 +2,7 @@
 
 ## TOC
 
-- [What is order](#what-is-order)
+- [What is OMS](#what-is-oms)
    - [Functionalities](#functionalities)
    - [Characteriscs](#characteriscs)
       - [variety](#variety多样性)
@@ -12,7 +12,7 @@
 - [Core building blocks](#core-building-blocks)
 - [Design](#design)
 
-## What is order
+## What is OMS
 
 订单作为电商系统的纽带，贯穿了电商系统的关键流程，其他模块都是围绕订单构建的。 
 
