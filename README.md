@@ -222,9 +222,9 @@ orderMark       FSM   storage                         dependencies
 - [X] 接单与落库解耦
    - 提高接单能力
 - [X] 流程引擎，流程编排
-- [X} 业务扩展点机制
+- [X] 业务扩展点机制
    - 微内核
-   - 不能让订单系统成为瓶颈
+   - 不能让接单系统成为瓶颈
    - 打破Conway law
 - [X] 查询
    - 读写分离
@@ -239,12 +239,19 @@ orderMark       FSM   storage                         dependencies
 - [X] Custom metrics reporter
    - central reporter
 - [ ] UAT环境
+   - 全链路压测
+   - profiler
+   - jtrace
+- [ ] 动态分组(请求路由)
+   - 降级方案
+   - 请求分发机制
 
 ## Design
 
 ### 带着问题思考
 
 - 2B和2C的订单是否统一存放和处理
+- 订单类型是否分层
 
 ### 订单形态
 
