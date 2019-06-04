@@ -29,17 +29,24 @@
                   |-- OMS --|
            API ---+    |    +-- WMS
                        |
-    +-------------------------------+
-    |		 |       |          |
-dependencies    FSM   storage      打标
-                         |                      
-                    +----+--------+            
-                    |             |           
-              lookup & search  modeling    
-	                          |
-				facts
-				  |
-	                   BI & data mining
+    +------------------------------------------------------+
+    |		 |       |                                 |
+orderMark       FSM   storage                         dependencies
+                         |                                 |
+                    +----+--------+                        |- 台账
+                    |             |                        |- 计费
+              lookup & search  modeling                    |- BigData
+                                  |                        |- 商品
+                                facts                      |- 库存
+                                  |                        |- 产品模型
+                           BI & data mining                |- 时效
+                                                           |- 地址和GIS
+                                                           |- 支付
+                                                           |- 预约
+                                                           |- 主数据
+                                                           |- 预分拣
+                                                           |- 风控
+                                                           +- ...
 ```
 
 ### Functionalities
@@ -137,7 +144,7 @@ dependencies    FSM   storage      打标
       - 产品中心
       - 时效
          - 控制下发WMS的时机
-	 - 控制下发TMS的时机
+         - 控制下发TMS的时机
       - 预分拣
       - 台账
       - 风控
