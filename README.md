@@ -9,8 +9,12 @@
       - [正向、逆向、盘点和搬仓混在一起，有race condition](#正向逆向盘点和搬仓混在一起有race-condition)
       - [模型复杂](#模型复杂)
       - [依赖多](#依赖多)
-- [Core building blocks](#core-building-blocks)
+- [Core tech building blocks](#core-tech-building-blocks)
 - [Design](#design)
+   - [带着问题思考](#带着问题思考)
+   - [订单形态](#订单形态)
+   - [Landscape](#Landscape)
+   - [核心流程](#核心流程)
 
 ## What is OMS
 
@@ -23,8 +27,8 @@
                   |         
           Admin --+         
                   |         
-         Seller --+         
-                  |         
+         Seller --+         +-- BMS
+                  |         |
            User --+         +-- TMS
                   |-- OMS --|
            API ---+    |    +-- WMS
@@ -168,10 +172,15 @@ orderMark       FSM   storage                         dependencies
    - 第三方WMS
    - 第三方支付
 
-## Core building blocks
+## Core tech building blocks
 
 - 各种语义的分布式锁
    - 幂等性
+   - 唯一性
+   - 防并发锁
+   - 防重锁
+   - 时间区间锁
+   - 分布式Latch
 - 定时任务平台
 - 可靠的MQ发送机制
 - FSM
@@ -194,8 +203,18 @@ orderMark       FSM   storage                         dependencies
    - 按订单号查询
       - 动静分离
    - 搜索引擎
+- FlexDB
+   - 解决个性化扩展字段问题
+- TCC
+   - 解决复杂场景下数据一致性问题
+- Graceful shutdown
+- Custom metrics reporter
 
 ## Design
+
+### 带着问题思考
+
+- 2B和2C的订单是否统一存放和处理
 
 ### 订单形态
 
@@ -204,5 +223,7 @@ orderMark       FSM   storage                         dependencies
    - 订单拆分
    - 订单转移
 - 生产单(生产运营单)
+
+### Landscape
 
 ### 核心流程
