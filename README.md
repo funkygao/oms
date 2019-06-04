@@ -4,6 +4,7 @@
 
 - [What is OMS](#what-is-oms)
    - [Functionalities](#functionalities)
+   - [Features](#features)
    - [Characteriscs](#characteriscs)
       - [variety](#variety多样性)
       - [正向、逆向、盘点和搬仓混在一起，有race condition](#正向逆向盘点和搬仓混在一起有race-condition)
@@ -54,6 +55,25 @@ orderMark       FSM   storage                         dependencies
 ```
 
 ### Functionalities
+
+#### 用户视角
+
+- 集单
+- 团单，拼单
+- 合单
+- 预约单
+
+#### 执行视角
+
+- 憋单
+- 拆单
+- 转移
+- 下发
+- 回传
+- 拦截
+- 正向和逆向
+
+### Features
 
 - FSM
 - Information Collector and Passthru(model)
