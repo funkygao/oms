@@ -200,42 +200,45 @@ orderMark       FSM   storage                         dependencies
 
 ## Core tech building blocks
 
-- 各种语义的分布式锁
+- [ ] 各种语义的分布式锁
    - 幂等性
    - 唯一性
    - 防并发锁
    - 防重锁
    - 时间区间锁
    - 分布式Latch
-- 定时任务平台
-- 可靠的MQ发送机制
-- FSM
+- [X] 定时任务平台
+- [ ] 可靠的MQ发送机制
+- [X] FSM
    - 订单状态是交易进展的反馈，是订单流程的一个个连接点
    - 不同类型订单的状态机不同
-- 统一异常中心
+- [X] 统一异常中心
+   - 异常的定义平台化
    - 异常处理平台化、流程化
    - 异常的自我解释，自我定位
    - 主动和被动的异常监控
-- 订单全流程跟踪
-- 异步接单框架 task
-- 接单与落库解耦
+- [X] 订单全流程跟踪
+- [X] 异步接单框架 task
+- [X] 接单与落库解耦
    - 提高接单能力
-- 流程引擎，流程编排
-- 业务扩展点机制
+- [X] 流程引擎，流程编排
+- [X} 业务扩展点机制
    - 微内核
    - 不能让订单系统成为瓶颈
    - 打破Conway law
-- 查询
+- [X] 查询
    - 读写分离
    - 按订单号查询
       - 动静分离
    - 搜索引擎
-- FlexDB
+- [X] FlexDB
    - 解决个性化扩展字段问题
-- TCC
+- [ ] TCC
    - 解决复杂场景下数据一致性问题
-- Graceful shutdown
-- Custom metrics reporter
+- [X] Graceful shutdown
+- [X] Custom metrics reporter
+   - central reporter
+- [ ] UAT环境
 
 ## Design
 
@@ -254,6 +257,10 @@ orderMark       FSM   storage                         dependencies
 ### Landscape
 
 ### 核心流程
+
+- 接单
+- 订单履约
+- 数据浏览
 
 ## TODO
 
