@@ -23,6 +23,8 @@
 
 订单可以认为是一次交易的生命周期，订单是交易的载体，反应的是履约的内容，即：一份订单就是一份合同。
 
+通过OMS，使得订单执行过程中的相关系统，例如TMS，OMS，BMS等成为一个有机整体，并为持续优化提供有力的数据支持。
+
 ```
        Partener --+         
                   |         
@@ -58,6 +60,10 @@ orderMark       FSM   storage                         dependencies
 
 #### 用户视角
 
+- 全渠道订单
+   - 多业态
+   - 中间枢纽
+   - 统一试图
 - 集单
 - 团单，拼单
 - 合单
@@ -210,6 +216,7 @@ orderMark       FSM   storage                         dependencies
    - 异常处理平台化、流程化
    - 异常的自我解释，自我定位
    - 主动和被动的异常监控
+- 订单全流程跟踪
 - 异步接单框架 task
 - 接单与落库解耦
    - 提高接单能力
@@ -247,3 +254,7 @@ orderMark       FSM   storage                         dependencies
 ### Landscape
 
 ### 核心流程
+
+## TODO
+
+- 订单的分配
