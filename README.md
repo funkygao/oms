@@ -65,7 +65,7 @@ orderMark       FSM   storage                         dependencies
 - 全渠道订单
    - 多业态
    - 中间枢纽
-   - 统一试图
+   - 统一视图
 - 集单
 - 团单，拼单
 - 合单
@@ -252,6 +252,9 @@ orderMark       FSM   storage                         dependencies
 
 ### 带着问题思考
 
+- 多层接单架构
+   - 统一接单
+   - 订单中间件接单
 - 多渠道隔离
 - 2B和2C的订单是否统一存放和处理
 - 订单类型是否分层
