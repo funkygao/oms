@@ -243,7 +243,6 @@ orderMark       FSM   storage                         dependencies
 - [ ] UAT环境
    - 全链路压测
    - profiler
-   - jtrace
 - [ ] 动态分组(请求路由)
    - 降级方案
    - 请求分发机制
